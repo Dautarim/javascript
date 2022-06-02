@@ -38,6 +38,8 @@ body
     justify-content: center;
     gap: 5px;
     flex-direction: column;
+
+    cursor: pointer;
 }
 
 #paises #abrepernas span

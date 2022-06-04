@@ -1,125 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
 *
 {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+   
 }
 
 body
 {
-    overflow-x: hidden;
-    position: relative;
+    
     display: flex;
-    gap: 30px;
+    gap: 20px;
+    height: 100vh;
 }
+
+
+
+section
+{
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+section::-webkit-scrollbar
+{
+  width: 8px;
+  height: 100vh;
+  background: rgba(102, 51, 153, 0);
+  margin-left: 10px;
+
+}
+
+section::-webkit-scrollbar-thumb
+{
+    background: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
 
 #paises
 {
-    
-    background: rgb(199, 155, 240);
-    transition: .3s;
-    border-radius: 10px 0 0 10px;
+    width: 200px;
+    height: 100vh;
 
-}
+    background: rgb(0, 0, 0);
 
-#paises.baixos
-{
     position: relative;
-    transform: translateX(90%);
-    transition: .3s;
-}
-
-#paises.baixos #abrepernas.toma
-{
-    right: 200px;
-    top: 50%;
-    transform: translateY(50%);
-}
-
-#paises #abrepernas
-{
-    position: absolute;
-    top: 30px;
-    right: 90px;
-    transform: translateX(50%);
-
-    width: 35px;
-    height: 35px;
-
-    background: white;
-    border-radius: 5px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    flex-direction: column;
-
-    cursor: pointer;
-}
-
-
-#paises #abrepernas span
-{
-    width: 20px;
-    height: 3px;
-
-    background: rgb(0, 0, 27);
-}
-
-#paises #abrepernas.toma span
-{
-    background: rgb(0, 0, 27);
-    transition: .4s;
-}
-
-#paises #abrepernas.toma span:nth-child(1)
-{
-    transform: rotate(45deg) translateY(7px) translateX(6px);
-    transition: transform .4s;
-    opacity: 1;
-}
-
-#paises #abrepernas.toma span:nth-child(3)
-{
-    transform: rotate(-45deg) translateY(-6px) translateX(4px);
-    transition: transform .4s;
-    
-}
-
-#paises #abrepernas.toma span:nth-child(2)
-{
-    opacity: 0;
-    transition: opacity .4s;
-}
-
-#paises ul
-{
-    list-style: none;
-    height: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 50px;
-    padding: 50px;
-
-    background: blueviolet;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+    transition: all ease .4s;
 }
 
-#paises ul li
+#paises.baixos
 {
-    background: blueviolet;
+    width: 0px;
+    margin-left: 30px;
 }
 
-#paises ul li a
+#abrepernas
 {
-    background: blueviolet;
+    position: absolute;
+    top: 50%;
+    right: 180px;
+
+    width: 32px;
+    height: 32px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: 1px solid rgb(32, 2, 43);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    z-index: 99;
+    transition: all ease .4s;
+}
+
+#abrepernas.toma
+{
+    right: 10px;
+    transition: all ease .4s;
+}
+
+#abrepernas.toma .partes:nth-child(1)
+{
+    transform: rotate(0deg) translateY(0px) translateX(0px);
+}
+
+#abrepernas.toma .partes:nth-child(3)
+{
+    transform: rotate(0deg) translateY(0px) translateX(0px);
+}
+
+#abrepernas.toma .partes:nth-child(2)
+{
+    opacity: 1;
+}
+
+
+
+#abrepernas .partes
+{
+    width: 20px;
+    height: 2px;
+
+    background: rgb(32, 2, 43);
+    z-index: 999;
+}
+
+
+#abrepernas .partes:nth-child(1)
+{
+    transform: rotate(45deg) translateY(5px) translateX(5px);
+}
+
+#abrepernas .partes:nth-child(3)
+{
+    transform: rotate(-45deg) translateY(-5px) translateX(5px);
+}
+
+#abrepernas .partes:nth-child(2)
+{
+    opacity: 0;
+}
+
+
+#paises li
+{
+    list-style: none;
+}
+
+#paises li a
+{
     text-decoration: none;
     color: white;
-    font-weight: 700;
-    font-size: 24px;
+    font-size: 20px;
+    font-weight: 600;
 }
